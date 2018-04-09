@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Secret sorter!</title>
+  </head>
+  <body>
+    <div class="form-container center-container">
+      <div class="container">
+        <div class="card card-container">
+          <p class="text-justify">Here you have 25 secrets from different people around the world. Can you classify them in whether they are vulgar or not?</p>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="User ID" aria-label="User ID" aria-describedby="basic-addon1">
+          </div>
+          <button type="button" class="btn btn-primary" id="btn-begin">Begin</button>
+          </div><!-- /card-container -->
+      </div>
+    </div>
+
+    <div class="center-container question-container" style="display: none;">
+      <div class="container">
+        <div class="card card-container">
+          <p class="text-justify"><b>Does this secret have vulgar content?</b></p>
+          <p class="text-justify">I like to play with zombies.</p>
+          <div class="input-group mb-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="radio">
+                  <label class="label-radio"><input type="radio" name="optradio" class="radio">Yes</label>
+                </div>
+                <div class="radio">
+                  <label class="label-radio"><input type="radio" name="optradio" class="radio">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <button type="button" class="btn btn-primary" id="btn-previous">Previous</button>
+            <label id="label-counter" class="label-counter">1</label>
+            <button type="button" class="btn btn-primary" id="btn-next">Next</button>
+          </div>
+          </div><!-- /card-container -->
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="helper.js"></script>
+  </body>
+</html>
