@@ -85,7 +85,7 @@ $(document).ready(function () {
       var settingsPostTags = {
         "async": true,
         "crossDomain": true,
-        "data": tags,
+        "data": JSON.stringify({"Results":tags}),
         "url": "http://secretapi.andresmeza.com/api/tags",
         "method": "POST",
         "headers": {
