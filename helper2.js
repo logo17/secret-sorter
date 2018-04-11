@@ -77,6 +77,7 @@ $(document).ready(function () {
     });
 
     $("#btn-finish").click(function(){
+        $('#btn-finish').prop('disabled', true);
       var tags = [];
       secrets.forEach(function(secret) {
         var tag = {
