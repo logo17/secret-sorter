@@ -20,13 +20,18 @@ $(document).ready(function () {
   });
 
     $("#btn-begin").click(function(){
-      if (checkTaggerId()) {
+      var sEmail = $("#user-text").val();
+      if ($.trim(sEmail).length == 0) {
+        $('#email-validator').show();
+      }
+      if (isValidEmail(sEmail)) {
+        $('#email-validator').hide();
         taggerId = $("#user-text").val();
         $(".form-container").hide();
         $(".question-container").show();
-      } else {
-        $('#modal-text').text("Please insert a valid user id.");
-        $('#customModal').modal('show');
+      }
+      else {
+        $('#email-validator').show();
       }
     });
 
@@ -124,9 +129,15 @@ $(document).ready(function () {
               ($('input[name=badWordsRadio]:checked').val() === 'true' || $('input[name=badWordsRadio]:checked').val() === 'false');
     }
 
-    function checkTaggerId() {
-      return !($("#user-text").val()==""
-                 || $("#user-text").val()==undefined)
+    function isValidEmail(sEmail) {
+      var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+      if (filter.test(sEmail)) {
+          return true;
+      }
+      else {
+          return false;
+      }
     }
+
 
 });
