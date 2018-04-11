@@ -12,44 +12,87 @@
     <title>Secret sorter!</title>
   </head>
   <body>
-    <div class="form-container center-container">
-      <div class="container">
-        <div class="card card-container">
-          <p class="text-justify">Here you have 25 secrets from different people around the world. Can you classify them in whether they are vulgar or not?</p>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="User ID" aria-label="User ID" aria-describedby="basic-addon1">
+    <div class="row align-items-center justify-content-center" style="height: 100vh;">
+      <div class="col-md-4 col-md-offset-7">
+        <div class="form-container">
+          <div class="container">
+            <div class="card card-container">
+              <p class="text-justify">Here you have 25 secrets from different people around the world. Can you classify them in whether they are vulgar or not?</p>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="User ID" aria-label="User ID" aria-describedby="basic-addon1" id="user-text">
+              </div>
+              <button type="button" class="btn btn-primary" id="btn-begin">Begin</button>
+              </div><!-- /card-container -->
           </div>
-          <button type="button" class="btn btn-primary" id="btn-begin">Begin</button>
-          </div><!-- /card-container -->
-      </div>
-    </div>
-
-    <div class="center-container question-container" style="display: none;">
-      <div class="container">
-        <div class="card card-container">
-          <p class="text-justify"><b>Does this secret have vulgar content?</b></p>
-          <p class="text-justify">I like to play with zombies.</p>
-          <div class="input-group mb-3">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="radio">
-                  <label class="label-radio"><input type="radio" name="optradio" class="radio">Yes</label>
+        </div>
+        <div class="question-container" style="display: none;">
+          <div class="container">
+            <div class="card card-container">
+              <p class="text-justify" id="secret-text"></p>
+              <p class="text-justify"><b>Does this secret have inappropriate content?</b></p>
+              <div class="input-group mb-2">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="radio">
+                      <label class="label-radio"><input type="radio" name="inappropriateRadio" class="radio" value="true">Yes</label>
+                    </div>
+                    <div class="radio">
+                      <label class="label-radio"><input type="radio" name="inappropriateRadio" class="radio" value="false">No</label>
+                    </div>
+                  </div>
                 </div>
-                <div class="radio">
-                  <label class="label-radio"><input type="radio" name="optradio" class="radio">No</label>
+              </div>
+              <p class="text-justify"><b>Does this secret have bad words?</b></p>
+              <div class="input-group mb-2">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="radio">
+                      <label class="label-radio"><input type="radio" name="badWordsRadio" class="radio" value="true">Yes</label>
+                    </div>
+                    <div class="radio">
+                      <label class="label-radio"><input type="radio" name="badWordsRadio" class="radio" value="false">No</label>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="input-group mb-3">
+                <button type="button" class="btn btn-primary" id="btn-previous">Previous</button>
+                <label id="label-counter" class="label-counter">1</label>
+                <button type="button" class="btn btn-primary" id="btn-next" style="margin-right: 5px;">Next</button>
+                <button type="button" class="btn btn-primary" id="btn-finish" disabled>Finish</button>
+              </div>
+              </div><!-- /card-container -->
+          </div>
+        </div>
+        <div class="result-container" style="display: none;">
+          <div class="container">
+            <div class="card card-container">
+              <p class="text-justify" id="secret-text"></p>
+              <p class="text-justify"><b>The answers were saved. Thank you for classifying this set of secrets.</b></p>
+              </div><!-- /card-container -->
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="customModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="customModalLabel">Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p id="modal-text"></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
-          <div class="input-group mb-3">
-            <button type="button" class="btn btn-primary" id="btn-previous">Previous</button>
-            <label id="label-counter" class="label-counter">1</label>
-            <button type="button" class="btn btn-primary" id="btn-next">Next</button>
-          </div>
-          </div><!-- /card-container -->
+        </div>
       </div>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

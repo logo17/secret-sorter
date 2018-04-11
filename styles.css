@@ -1,11 +1,3 @@
-.center-container{
-  height: 300px;
-  width: 400px;
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-}
-
 .card-container{
   padding: 10px;
 }
@@ -21,4 +13,8 @@
 .label-counter {
   margin-right: 5px;
   margin-left: 5px;
+}
+
+.btn-next {
+  margin-right: 5px;
 }
